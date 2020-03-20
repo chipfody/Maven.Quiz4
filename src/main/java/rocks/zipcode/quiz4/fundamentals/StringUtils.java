@@ -11,18 +11,27 @@ public class StringUtils {
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-//        if (str.length() == 1) {
-//            return str.toUpperCase();
-//        }
-//        int indexToCapitalize = str.indexOf(getMiddleCharacter(str));
-//        System.out.println(indexToCapitalize);
-//
-//        return str.substring(0, indexToCapitalize) + str.substring(indexToCapitalize, indexToCapitalize + 1).toUpperCase() + str.substring(indexToCapitalize + 1);
-        return null;
+        if (str.length() == 1) {
+            return str.toUpperCase();
+        } else {
+            int indexToCapitalize = (str.length() / 2);
+            System.out.println(str.length() / 2);
+            System.out.println(indexToCapitalize);
+
+            return str.substring(0, indexToCapitalize) + str.substring(indexToCapitalize, indexToCapitalize + 1).toUpperCase() + str.substring(indexToCapitalize + 1);
+        }
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+        if (str.length() == 1) {
+            return str.toLowerCase();
+        } else {
+            int indexToCapitalize = (str.length() / 2);
+            System.out.println(str.length() / 2);
+            System.out.println(indexToCapitalize);
+
+            return str.substring(0, indexToCapitalize) + str.substring(indexToCapitalize, indexToCapitalize + 1).toLowerCase() + str.substring(indexToCapitalize + 1);
+        }
     }
 
     public static Boolean isIsogram(String str) {
@@ -36,7 +45,8 @@ public class StringUtils {
             } else {
                 Isogram = true;
             }
-        }  return Isogram;
+        }
+        return Isogram;
 
     }
 
@@ -52,10 +62,22 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+        StringBuilder output = new StringBuilder();
+
+        return output.toString();
+
     }
 
     public static String invertCasing(String str) {
-        return null;
+        Integer index = str.length();
+        char[] newString = str.toCharArray();
+        for (int i = 0; i < index; i++) {
+            if (Character.isUpperCase(newString[i])) {
+                newString[i] = Character.toLowerCase(newString[i]);
+            } else {
+                newString[i] = Character.toUpperCase(newString[i]);
+            }
+        }
+        return String.valueOf(newString);
     }
 }
