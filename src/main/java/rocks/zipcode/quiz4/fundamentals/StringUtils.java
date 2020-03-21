@@ -62,11 +62,26 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        StringBuilder output = new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        if (!hasDuplicateConsecutiveCharacters(str)) {
+            return str;
+        } else {
 
-        return output.toString();
+            char[] output = str.toCharArray();
+            result.append(output[0]);
+            int idx = 1;
+            while (idx < str.length()- 2) {
+                if (output[idx] != output[idx - 1] && output[idx] != output[idx + 1]) {
+                    result.append(output[idx]);
+                    idx++;
+                } else {idx++;}
+                } if (output[str.length() - 1] != output[str.length() - 2]) {
+                    result.append(output[str.length() - 1]);
+                }
+            }
+            return result.toString();
+        }
 
-    }
 
     public static String invertCasing(String str) {
         Integer index = str.length();
