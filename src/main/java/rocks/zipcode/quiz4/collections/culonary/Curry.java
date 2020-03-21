@@ -7,8 +7,4 @@ public class Curry implements Spice {
     public String getName() {
         return name;
     }
-
-
-    public void isSpice() {
-    }
 }

@@ -5,7 +5,7 @@ package rocks.zipcode.quiz4.objectorientation.account;
  */
 public class Employee extends Account implements Transactable, Worker{
     private BankAccount bankAccount;
-    private Double balance;
+    //private Double balance = 15.0;
     private Double hourlyWage;
     private Double hoursWorked;
 
@@ -13,13 +13,13 @@ public class Employee extends Account implements Transactable, Worker{
         bankAccount = new BankAccount();
         this.hourlyWage = 35.0;
         this.hoursWorked = 0.0;
-        this.balance = 15.0;
     }
 
     public Employee(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
         this.hourlyWage = 35.0;
     }
+
 
     public BankAccount getBankAccount() {
         return this.bankAccount;

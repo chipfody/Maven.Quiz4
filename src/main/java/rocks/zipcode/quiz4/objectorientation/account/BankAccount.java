@@ -8,6 +8,9 @@ public class BankAccount extends Account implements Transactable {
     private Long id;
     private Double balance;
 
+    public BankAccount() {
+        balance = 0.0;
+    }
 
     public void setBalance(Double val) {
         this.balance = val;
