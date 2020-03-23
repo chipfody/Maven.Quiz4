@@ -13,19 +13,17 @@ public class Food {
     private List<Spice> spiceList = new ArrayList<>();
 
     public List<Spice> getAllSpices() {
-        return this.spiceList;
+        return spiceList;
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-//        for (Spice spice : spiceList) {
-//            if (!condiment.containsKey(spice)) {
-//                condiment.put(Spice.get(spice).getClass(), spiceList.size());
-//            } else {
-//                Integer count = condiment.get(spice) + 1;
-//                condiment.put((spice), count);
-//            }
-//        }
-        return null;
+        for (Spice spice : spiceList) {
+            if (!condiment.containsKey(spice)) {
+                condiment.put(spice, spiceList.size());
+            } else { return null;
+            }
+        } return null; //(Map<SpiceType, Integer>)condiment;
+
     }
 
     public void applySpice(Spice spice) {
